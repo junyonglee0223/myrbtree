@@ -28,5 +28,19 @@ node_t *rbtree_max(const rbtree *);
 int rbtree_erase(rbtree *, node_t *);
 
 int rbtree_to_array(const rbtree *, key_t *, const size_t);
+void rotate_left(rbtree*, node_t*);
+void rotate_right(rbtree*, node_t*);
+void refix_insert(rbtree*, node_t*);
 
+void rbtree_insert_fixup(rbtree*, node_t* );
+void refix_erase(rbtree*, node_t*, int);           //test erase refix
+//void refix_erase(rbtree*, node_t*);
+void trans_node(rbtree*, node_t*, node_t*);
+void inorder_travel(rbtree*, node_t*);						//test용 메소드
+void postorder_delete(rbtree*, node_t*);					//delete용 메소드
+
+
+
+void exchange_color(node_t*, node_t*);
+node_t* get_next_node(const rbtree*, node_t*);
 #endif  // _RBTREE_H_
